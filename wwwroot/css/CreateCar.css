@@ -1,0 +1,24 @@
+﻿.row{
+    margin-top: 20px;
+}
+
+body{
+    background-color: dimgrey;
+    color: white;
+}
+
+footer{
+    background-color: white;
+}
+
+.btnSub{
+    padding: 5px;
+    font-size: 22px;
+    border: 2px solid black;
+    background-color: white;
+}
+
+.backBtn {
+    background-color: bisque;
+    font-size: 20px;
+}

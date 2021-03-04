@@ -1,0 +1,24 @@
+﻿body {
+    background-color: black;
+}
+
+.header {
+    margin-top: 50px;
+    color: white;
+    border: 1px solid white;
+    background-color: #B90C0C;
+}
+
+footer {
+    background-color: wheat;
+}
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: 50%;
+}
+
