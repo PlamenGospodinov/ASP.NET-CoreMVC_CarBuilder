@@ -1,0 +1,38 @@
+﻿@model CarBuilder.ViewModels.Garage.EditVM
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit the Garage";
+}
+<head>
+    <link href="~/css/CreateCar.css" rel="stylesheet" />
+</head>
+<fieldset>
+    <legend>Edit the garage</legend>
+    <form action="/Garage/Edit" method="post">
+        <div class="grid">
+            
+            <div class="row">
+                <div class="col-2">Enter car ID:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.CarID)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.CarID)</div>
+                <div class="col-2">@Html.ValidationSummary()</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Enter client ID:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.ClientID)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.ClientID)</div>
+            </div>
+
+            <div class="row">
+                <div class="col-1 btnSub">
+                    <input type="submit" value="Save" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1 backBtn">
+                    <a href="/Home/Index">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>

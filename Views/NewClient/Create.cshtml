@@ -1,0 +1,47 @@
+﻿@model CarBuilder.ViewModels.NewClient.CreateVM
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Add a new client";
+}
+<head>
+    <link href="~/css/CreateCar.css" rel="stylesheet" />
+</head>
+<fieldset>
+    <legend>Add a new client</legend>
+    <form action="/NewClient/Create" method="post">
+        <div class="grid">
+            <div class="row">
+                <div class="col-2">Enter unique Client ID:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.ClientID)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.ClientID)</div>
+                <div class="col-2">@Html.ValidationSummary()</div>
+            </div>
+            <div class="row">
+                <div class="col-2">First name:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.FirstName)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.FirstName)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Last name:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.LastName)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.LastName)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">City:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.City)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.City)</div>
+            </div>
+            
+            <div class="row">
+                <div class="col-2 btnSub">
+                    <input type="submit" value="Add a new client" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1 backBtn">
+                    <a href="/Home/Index">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>

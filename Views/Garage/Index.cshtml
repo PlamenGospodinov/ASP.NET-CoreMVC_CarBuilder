@@ -1,0 +1,35 @@
+﻿<div class="invisible">
+    @Model CarBuilder.ViewModels.Garage.IndexVM
+    @using CarBuilder.Entities;
+</div>
+@{
+    ViewBag.Title = "Garages Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/css/Cars.css" rel="stylesheet" />
+</head>
+
+<a href="/Garage/Create">NEW Garage</a>
+
+<div class="grid">
+    <div class="row">
+        <div class="col-2">Garage ID</div>
+        <div class="col-1">CarID</div>
+        <div class="col-1">ClientID</div>
+    </div>    
+    @foreach (Garagee item in Model.Items)
+    {
+        <div class="row">
+            <div class="col-2">@item.GarageID</div>
+            <div class="col-1">@item.CarID</div>
+            <div class="col-1">@item.ClientID</div>
+            
+            <div class="col-2">
+                <a href="/Garage/Edit?id=@item.GarageID">Edit</a>
+                <a href="/Garage/Delete?id=@item.GarageID">Delete</a>
+            </div>
+        </div>
+    }
+</div>

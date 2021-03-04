@@ -1,0 +1,61 @@
+﻿@model CarBuilder.ViewModels.NewCar.CreateVM
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create Car";
+}
+<head>
+    <link href="~/css/CreateCar.css" rel="stylesheet" />
+</head>
+<fieldset>
+    <legend>Create a car</legend>
+    <form action="/NewCar/Create" method="post">
+        <div class="grid">
+            <div class="row">
+                <div class="col-2">Enter unique ID for the car:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.CarID)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.CarID)</div>
+                <div class="col-2">@Html.ValidationSummary()</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Brand:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.Brand)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.Brand)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Model:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.Model)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.Model)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Color:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.Color)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.Color)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Interior Material:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.InteriorMaterial)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.InteriorMaterial)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Interior Color:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.InteriorColor)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.InteriorColor)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Engine Displacement:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.EngineDisplacement)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.EngineDisplacement)</div>
+            </div>
+            <div class="row">
+                <div class="col-1 btnSub">
+                    <input type="submit" value="Create" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1 backBtn">
+                    <a href="/Home/Index">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>

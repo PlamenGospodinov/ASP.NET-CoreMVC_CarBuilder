@@ -1,0 +1,37 @@
+﻿<div class="invisible">
+    @Model CarBuilder.ViewModels.NewClient.IndexVM
+    @using CarBuilder.Entities;
+</div>
+@{
+    ViewBag.Title = "Client Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/css/Cars.css" rel="stylesheet" />
+</head>
+
+<a href="/NewClient/Create">NEW CLIENT</a>
+
+<div class="grid">
+    <div class="row">
+        <div class="col-1">Client ID</div>
+        <div class="col-2">First name</div>
+        <div class="col-2">Last name</div>
+        <div class="col-1">City</div>
+        
+    </div>
+    @foreach (Client item in Model.Items)
+    {
+        <div class="row">
+            <div class="col-1">@item.ClientID</div>
+            <div class="col-2">@item.FirstName</div>
+            <div class="col-2">@item.LastName</div>
+            <div class="col-1">@item.City</div>
+            <div class="col-2">
+                <a href="/NewClient/Edit?id=@item.ClientID">Edit</a>
+                <a href="/NewClient/Delete?id=@item.ClientID">Delete</a>
+            </div>
+        </div>
+    }
+</div>

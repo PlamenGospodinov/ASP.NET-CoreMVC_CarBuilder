@@ -1,0 +1,42 @@
+﻿<div class="invisible">
+    @Model CarBuilder.ViewModels.NewCar.IndexVM
+    @using CarBuilder.Entities;
+</div>
+@{ 
+    ViewBag.Title = "Cars Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <link href="~/css/Cars.css" rel="stylesheet" />
+</head>
+
+<a href ="/NewCar/Create">NEW CAR</a>
+
+<div class="grid">
+    <div class="row">
+        <div class="col-1">Car ID</div>
+        <div class="col-1">Brand</div>
+        <div class="col-1">Model</div>
+        <div class="col-1">Color</div>
+        <div class="col-2">Interior Material</div>
+        <div class="col-2">Interior Color</div>
+        <div class="col-2">Engine Displacement</div>
+    </div>
+    @foreach (Car item in Model.Items)
+    {
+<div class="row">
+    <div class="col-1">@item.CarID</div>
+    <div class="col-1">@item.Brand</div>
+    <div class="col-1">@item.Model</div>
+    <div class="col-1">@item.Color</div>
+    <div class="col-2">@item.InteriorMaterial</div>
+    <div class="col-2">@item.InteriorColor</div>
+    <div class="col-2">@item.EngineDisplacement</div>
+    <div class="col-2">
+        <a href="/NewCar/Edit?id=@item.CarID">Edit</a>
+        <a href="/NewCar/Delete?id=@item.CarID">Delete</a>
+    </div>
+</div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model CarBuilder.ViewModels.NewClient.EditVM
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Edit a client info";
+}
+<head>
+    <link href="~/css/CreateCar.css" rel="stylesheet" />
+</head>
+<fieldset>
+    <legend>Edit a client info</legend>
+    <form action="/NewClient/Edit" method="post">
+        <div class="grid">
+            
+            <div class="row">
+                <div class="col-2">First name:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.FirstName)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.FirstName)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">Last name:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.LastName)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.LastName)</div>
+            </div>
+            <div class="row">
+                <div class="col-2">City:</div>
+                <div class="col-2">@Html.TextBoxFor(m => m.City)</div>
+                <div class="col-2">@Html.ValidationMessageFor(m => m.City)</div>
+            </div>
+
+            <div class="row">
+                <div class="col-2 btnSub">
+                    <input type="submit" value="Save" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1 backBtn">
+                    <a href="/NewClient/Index">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>
